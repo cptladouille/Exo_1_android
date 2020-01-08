@@ -2,6 +2,7 @@ package com.example.recyclerview_workshop;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -64,8 +65,42 @@ public class PeopleDatabase extends SQLiteOpenHelper {
 
 
 
-    public void GetFromDatabase(SQLiteDatabase db,int id)
+    public People GetPeople(int id)
     {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String DATABASE_GET_FROM_ID_SCRIPT =
+                String.format(
+                        "Select * from %s"+
+                        "where id = %d" ,
+                        PEOPLE_TABLE,id
+                );
+        Cursor res = db.rawQuery( DATABASE_GET_FROM_ID_SCRIPT,null );
+        res.moveToFirst();
+        People p = null;
+        try {
+            String name = res.getString(res.getColumnIndex(KEY_PEOPLE_NAME));
+            int age = res.getInt(res.getColumnIndex(KEY_PEOPLE_AGE));
+            People.Sex sex = People.Sex.valueOf(res.getString(res.getColumnIndex(KEY_PEOPLE_SEX)));
+            boolean loveAndroid = res.getInt(res.getColumnIndex(KEY_PEOPLE_LOVEANDROID))>0;
+            p = new People(
+                    name,
+                    age,
+                    sex,
+                    loveAndroid);
+        }catch(Exception e) {
+        }
+        res.close();
+        return p;
+    }
+
+    public void DeletePeople(int id)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String DATABASE_GET_FROM_ID_SCRIPT =
+                String.format(
+                        "Delete * from %s"+ "where id = %d" ,
+                        PEOPLE_TABLE,id
+                );
     }
 
 }
