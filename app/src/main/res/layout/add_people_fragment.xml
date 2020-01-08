@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+android:layout_width="500dp"
+android:layout_height="match_parent"
+android:id="@+id/AddPeopleFragment">
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/AddPeopleFragmentTitle"
+    android:text="@string/AddPeopleFragmentTitle"/>
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/PeopleNameInput"
+    android:inputType="text"
+    android:autofillHints="@string/AddPeopleNameInput"
+    android:hint="@string/AddPeopleNameInput"/>
+
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/PeopleAgeInput"
+    android:inputType = "number"
+    android:autofillHints="@string/AddPeopleAgeInput"
+    android:hint="@string/AddPeopleAgeInput"/>
+<RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/PeopleSexGroupSelector"
+    android:orientation="horizontal">
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PeopleSexRadioBtnMale"
+        android:text="@string/AddPeopleRadioMale"/>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PeopleSexRadioBtnFemale"
+        android:text="@string/AddPeopleRadioFemale"/>
+</RadioGroup>
+<Switch
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/PeopleLoveAndroidSwitch"
+    android:text="@string/AddPeopleSwitchPlaceholder"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PeopleCreateBtn"
+        android:text="@string/AddPeopleCreateBtn" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PeopleCancelBtn"
+        android:text="@string/AddPeopleCancelBtn"/>
+</LinearLayout>
+</LinearLayout>

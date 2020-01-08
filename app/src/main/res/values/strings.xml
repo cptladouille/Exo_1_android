@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">RecyclerView_workshop</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_clear">Clear</string>
+    <string name="AddPeopleFragmentTitle">Add new people</string>
+    <string name="AddPeopleNameInput">Enter Name</string>
+    <string name="AddPeopleAgeInput">Enter Age</string>
+    <string name="AddPeopleRadioMale">Male</string>
+    <string name="AddPeopleRadioFemale">Female</string>
+    <string name="AddPeopleSwitchPlaceholder">Love Android ?</string>
+    <string name="AddPeopleCreateBtn">Create</string>
+    <string name="AddPeopleCancelBtn">Cancel</string>
+
+
+</resources>
